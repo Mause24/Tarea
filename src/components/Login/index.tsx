@@ -32,7 +32,7 @@ const Login = ()=>{
             </div>
             <input type="text"  className='txt' placeholder='Usuario' id='user' onChange={handdleInput}/>
             <input type="password"  className='txt' placeholder='Contraseña' id='password' onChange={handdleInput}/>
-            <button type="submit" className="btn" onClick={validarInputs}>Ingresar</button>
+            <button type="submit" className="btn" onClick={validarInputs} id='btn-ingresar'>Ingresar</button>
         </div>
     );
 }

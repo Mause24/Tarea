@@ -34,7 +34,18 @@ h1{
   box-shadow: 0 0 8px rgb(0, 0, 0);
   font-family:sans-serif;
   font-size: 1.2rem;
-  margin: 80px auto;
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+  width: 90%;
+}
+#contenedor-gestion {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgb(0, 0, 0);
+  font-family:sans-serif;
+  font-size: 1.2rem;
+  margin: 20px auto;
   padding: 20px;
   text-align: center;
   width: 90%;
@@ -49,17 +60,6 @@ h1{
     text-align: center;
     width: 90%;
 }
-.btn{
-    background-color: rgb(186, 12, 47);
-    color: white;
-    font-size: 1.8rem;
-    
-}
-.btn:hover{
-    font-size: 2rem;
-    height: auto;
-    width: auto;
-}
 
 #contenedor-titulo{
     background-color: rgb(186, 12, 47);
@@ -72,44 +72,97 @@ h1{
  }
  #contenedor-table table{
    width: 100%;
-   font-size: 1.1rem;
+   font-size: 1rem;
    padding: 10px;
  }
  #contenedor-table table thead tr:first-child{
    margin-bottom: 10px;
-   background-color: blue;
+   background-color: rgb(186, 12, 47);
+   color: white;
+   font-size: 1.3rem;
+
  }
  #contenedor-table table tbody {
    padding: 10px;
    background-color: rgb(229, 229, 229);
  }
 
- nav{
-   margin: 10px;
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
+ table tr th{
+   padding: 5px;
  }
- nav p{
-   font-size: 1.5rem;
-   align-items: center;
-   justify-content: center;
-   text-align: center;
-   margin: 0;
+
+
+  #btn-eliminar{
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 3px rgb(0, 0, 0);
+    background-image: url(./icons/X.png);
+    background-position: center;
+    background-size: 30px;
+    margin: 5px;
+    padding: 5px;
+  }
+  #btn-eliminar:hover{
+    background-size: cover;
+  }
+  #btn-editar{
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 3px rgb(0, 0, 0);
+    background-repeat: no-repeat;
+    background-image: url(./icons/editar.png);
+    background-position: center;
+    background-size: 30px;
+    margin: 5px;
  }
- nav #btn-atras{
-   width: 35px;
-   height: 35px;
-   background-image: url(./icons/flechaAtras.png);
-   background-position: center;
-   background-size: 28px;
-   background-repeat: no-repeat;
+  #btn-editar:hover{
+    background-size: cover;
  }
- nav #btn-siguiente{
-   width: 35px;
-   height: 35px;
-   background-image: url(./icons/flechaSiguiente.png);
-   background-position: center;
-   background-size: 28px;
-   background-repeat: no-repeat;
+ #btn-ingresar{
+    background-color: rgb(186, 12, 47);
+    color: white;
+    font-size: 1.8rem;
  }
+ table tr{
+   border-bottom: 1px solid rgba(128, 128, 128, 0.212);
+  }
+  table tr:last-child{
+   border-bottom: 0;
+   
+}
+#contenedor-botones{
+  width: 80%;
+  padding: 5px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.titulo-producto{
+  background-color: gray;
+  font-size: 0.8rem;
+
+}
+#contenedor-titulo-producto{
+  background-color: rgb(186, 12, 47);
+  width: 70%;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+#contenedor-titulo-producto h1{
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+#contenedor-gestion{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align:center ;
+}
+#txt-cantidad{
+  width: 80%;
+  height: 30px;
+  border-radius: 10px;
+}
