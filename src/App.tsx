@@ -13,10 +13,11 @@ function App() {
         <Switch>
           <Route path='/login' exact component={Login} />
           <Route path='/ajustes' exact component={Ajustes} />
-          <Route path='/gestion' exact component={Gestion} />
+          <Route path='/gestion/:id' exact component={Gestion} />
           <Redirect from='/' to='/login'></Redirect>
         </Switch>
       </Router>
+      
     </Provider>
   );
 }

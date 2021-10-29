@@ -1,43 +1,82 @@
-import React, { useContext} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useHistory, useParams } from 'react-router';
 import { ProductosContext } from '../../context/productosContext';
+import AJUSTES from '../../JSON/json';
+import InformacionProducto from '../../modals/informacionProducto';
 
+interface ARRAYPRODUCTO {
+    id: number,
+    producto: string,
+    cantidadBodega: number,
+    cantidadReal: number,
+}
 const Gestion = () => {
-    const {productos}=useContext(ProductosContext);        
-    console.log(productos);
-    
+    const { productos, getArrayProductos } = useContext(ProductosContext);
+    const [arrayproductos, setarrayproductos] = useState([] as any[])
+    const history = useHistory();
+    const { id: idParam } = useParams<{ id: string }>()
+    const handdleChange = (event: React.ChangeEvent<HTMLInputElement>, productoArray: ARRAYPRODUCTO) => {
+        const { id, producto, cantidadBodega } = productoArray
+        if (arrayproductos.find(item => item.id === id)) {
+            arrayproductos.filter(item => {
+                item.id === id && (item.cantidadReal = Number(event.target.value.trim()))
+            })
+        } else {
+            setarrayproductos([...arrayproductos,
+            {
+                id: id,
+                producto: producto,
+                cantidadBodega: cantidadBodega,
+                cantidadReal: Number(event.target.value.trim()),
+            }
+            ])
+
+        }
+
+    }
+    useEffect(() => {
+        const ajuste = AJUSTES.find((ajuste) => ajuste.id === +idParam)
+        getArrayProductos(ajuste?.productos ?? [])
+    }, [])
     return (
         <>
-            <div id='contenedor-gestion'>
-                <div id='contenedor-titulo-producto' >
-                    <h1>Gestion </h1>
-                </div>
-                <div id='contenedor-table'>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Producto</th>
-                                <th>Cant.</th>
-                                <th>Cant. Real</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                            productos.map((producto:any) => (
-                                <tr key={producto.id}>
-                                    <th>{producto.producto}</th>
-                                    <th>{producto.cantidadBodega}</th>
-                                    <th><input type="number" name="" id="txt-cantidad" /></th>
+            <div className='fondoModal'>
+                <div id='contenedor-gestion'>
+                    <div id='contenedor-titulo-producto' >
+                        <h1>Gestion </h1>
+                    </div>
+                    <div id='contenedor-table'>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Cant.</th>
+                                    <th>Cant. Real</th>
                                 </tr>
-                            ))
-                            }
-                        </tbody>
-                    </table>
-                </div>
-                <div id='contenedor-botones'>
-                    <input type="button" value="Guardar" className='btn btn-success' id='btn-guardar'/>
-                    <input type="button" value="Cancelar" className='btn btn-danger' id='btn-cancelar'/>
+                            </thead>
+                            <tbody>
+                                {
+                                    productos.map((producto: any) => (
+                                        <tr key={producto.id}>
+                                            <th>{producto.producto}</th>
+                                            <th>{producto.cantidadBodega}</th>
+                                            <th><input type="number" name="" id="cantidad" onChange={(e) => handdleChange(e, producto)} /></th>
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id='contenedor-botones'>
+                        <input type="button" value="Guardar" className='btn btn-success' id='btn-guardar' onClick={() => console.log(arrayproductos)} />
+                        <input type="button" value="Cancelar" className='btn btn-danger' id='btn-cancelar' onClick={() => history.replace('/ajustes')} />
+                    </div>
                 </div>
             </div>
+            <InformacionProducto>
+                <h2>Texto del modal</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo maiores officia, est totam distinctio rerum?</p>
+            </InformacionProducto>
         </>
     );
 }

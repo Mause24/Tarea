@@ -17,14 +17,14 @@ const Login = ()=>{
     }
     const validarInputs = ()=>{
         const {user, password} = value
-        if (user!== '' && password!=='') {
-            history.push('/ajustes')
+        if (user.trim()!== '' && password.trim()!=='') {
+            history.replace('/ajustes')
         } else {
-            console.log('Usuario o contraseña estan vacios');
+            alert('Los campos de usuario y/o contraseña estan vacios')
             
         }
     }
-
+    
     return (
         <div id='contenedor-login'>
             <div id='contenedor-titulo'>

@@ -149,6 +149,13 @@ h1{
   margin: 10px;
   padding: 10px;
 }
+#contenedor-titulo-ajustes{
+  background-color: rgb(186, 12, 47);
+  width: 80%;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
 #contenedor-titulo-producto h1{
   font-size: 1.5rem;
   letter-spacing: 2px;
@@ -160,10 +167,30 @@ h1{
   align-items: center;
   text-align:center ;
 }
-#txt-cantidad{
+#cantidad{
   width: 80%;
   height: 30px;
   border-radius: 10px;
+}
+#Cabecera{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#btn-logout{
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 0 3px rgb(0, 0, 0);
+  background-repeat: no-repeat;
+  background-image: url(./icons/salida.png);
+  background-position: center;
+  background-size: 30px;
+  margin: 5px;
+}
+#contendor-logout{
+  text-align: start;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 input[type=number]::-webkit-inner-spin-button, 

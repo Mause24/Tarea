@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { INITIALSTATE, ProductosContext } from '../context/productosContext';
 
+/* interface PRODUCTOS{
+    id:
+}
+ */
 export const Provider=({children}:any)=>{
     const [productos, setproductos] = useState(INITIALSTATE)
     const getArrayProductos=(array: any[])=>{

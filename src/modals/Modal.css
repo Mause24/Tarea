@@ -1,0 +1,37 @@
+.productos{
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0,.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.productos.is-open{
+    display: flex;
+}
+
+.modal-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.container-X{
+    position: absolute;
+    right: 10px;
+}
+.modal-container h2{
+    width: 60%;
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+}
