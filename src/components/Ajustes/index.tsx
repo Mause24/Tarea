@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext} from 'react';
 import { useHistory } from 'react-router';
 import { ProductosContext } from '../../context/productosContext';
 import AJUSTES from '../../JSON/json';

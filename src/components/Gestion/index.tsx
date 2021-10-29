@@ -1,8 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import { ProductosContext } from '../../context/productosContext';
 
 const Gestion = () => {
-    const {productos}=useContext(ProductosContext);
+    const {productos}=useContext(ProductosContext);        
+    console.log(productos);
+    
     return (
         <>
             <div id='contenedor-gestion'>
@@ -21,10 +23,10 @@ const Gestion = () => {
                         <tbody>
                             {
                             productos.map((producto:any) => (
-                                <tr>
+                                <tr key={producto.id}>
                                     <th>{producto.producto}</th>
                                     <th>{producto.cantidadBodega}</th>
-                                    <th><input type="text" name="" id="txt-cantidad" /></th>
+                                    <th><input type="number" name="" id="txt-cantidad" /></th>
                                 </tr>
                             ))
                             }
@@ -32,8 +34,8 @@ const Gestion = () => {
                     </table>
                 </div>
                 <div id='contenedor-botones'>
-                    <input type="button" value="Guardar" className='btn btn-success'/>
-                    <input type="button" value="Cancelar" className='btn btn-danger'/>
+                    <input type="button" value="Guardar" className='btn btn-success' id='btn-guardar'/>
+                    <input type="button" value="Cancelar" className='btn btn-danger' id='btn-cancelar'/>
                 </div>
             </div>
         </>

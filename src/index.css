@@ -5,7 +5,6 @@
 }
 
 html, body{
-  height: 100%;
   width: 100%;
   background-color: rgb(240, 229, 210);
 }
@@ -166,3 +165,11 @@ h1{
   height: 30px;
   border-radius: 10px;
 }
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
