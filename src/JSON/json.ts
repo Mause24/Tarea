@@ -54,7 +54,7 @@
                     id: 10,
                     producto: 'PAPAS MARGARITAS LIMON 30GR',
                     cantidadBodega: 1,
-                }, 
+                },
                 {
                     id: 21,
                     producto: 'PAPAS MARGARITAS BBQ 30GR',
