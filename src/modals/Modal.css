@@ -16,6 +16,7 @@
 }
 
 .modal-container{
+    width: 70%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -25,13 +26,24 @@
     padding: 10px;
 
 }
-.container-X{
+.modal-close{
     position: absolute;
-    right: 10px;
+    right: 60px;
 }
 .modal-container h2{
     width: 60%;
     margin: 10px;
     text-align: center;
     justify-content: center;
+}
+
+#btn-cerrar{
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-image: url(../icons/X.png);
+    background-position: center;
+    background-size: contain;
+    margin: 5px;
+    padding: 5px;
 }

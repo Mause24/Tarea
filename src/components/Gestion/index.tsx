@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 import { ProductosContext } from '../../context/productosContext';
+import useModal from '../../hooks/useModal';
 import AJUSTES from '../../JSON/json';
 import InformacionProducto from '../../modals/informacionProducto';
 
@@ -38,6 +39,8 @@ const Gestion = () => {
         const ajuste = AJUSTES.find((ajuste) => ajuste.id === +idParam)
         getArrayProductos(ajuste?.productos ?? [])
     }, [])
+    const [isOpenModalProductos, openProductos, closeProductos]= useModal();
+    
     return (
         <>
             <div className='fondoModal'>
@@ -68,12 +71,12 @@ const Gestion = () => {
                         </table>
                     </div>
                     <div id='contenedor-botones'>
-                        <input type="button" value="Guardar" className='btn btn-success' id='btn-guardar' onClick={() => console.log(arrayproductos)} />
+                        <input type="button" value="Guardar" className='btn btn-success' id='btn-guardar' onClick={() => openProductos} />
                         <input type="button" value="Cancelar" className='btn btn-danger' id='btn-cancelar' onClick={() => history.replace('/ajustes')} />
                     </div>
                 </div>
             </div>
-            <InformacionProducto>
+            <InformacionProducto isOpen={isOpenModalProductos} closeModal={closeProductos}>
                 <h2>Texto del modal</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo maiores officia, est totam distinctio rerum?</p>
             </InformacionProducto>
