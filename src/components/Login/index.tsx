@@ -1,8 +1,12 @@
 import  React,{useState} from 'react';
 import { useHistory } from 'react-router';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 
 const Login = ()=>{
+
+    const [text, setText]= useLocalStorage('token', '');
+
     const [value, setvalue]=useState({
         user:'',
         password:'',
@@ -18,6 +22,8 @@ const Login = ()=>{
     const validarInputs = ()=>{
         const {user, password} = value
         if (user.trim()!== '' && password.trim()!=='') {
+            /* setText('1')
+            setTimeout(()=>{setText('')},6000) */
             history.replace('/ajustes')
         } else {
             alert('Los campos de usuario y/o contraseña estan vacios')

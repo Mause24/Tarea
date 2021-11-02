@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
     "@types/react-router-dom": "^5.3.2"
   }
 }
