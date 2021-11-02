@@ -30,9 +30,11 @@ const Login = ()=>{
             <div id='contenedor-titulo'>
                 <h1>LOGIN</h1>
             </div>
-            <input type="text"  className='txt' placeholder='Usuario' id='user' onChange={handdleInput}/>
-            <input type="password"  className='txt' placeholder='Contraseña' id='password' onChange={handdleInput}/>
-            <button type="submit" className="btn" onClick={validarInputs} id='btn-ingresar'>Ingresar</button>
+            <form action="">
+                <input type="text" className='txt' placeholder='Usuario' id='user' onChange={handdleInput} required/>
+                <input type="password" className='txt' placeholder='Contraseña' id='password' onChange={handdleInput} required/>
+                <button type="submit" className="btn" onClick={validarInputs} id='btn-ingresar'>Ingresar</button>
+            </form>
         </div>
     );
 }

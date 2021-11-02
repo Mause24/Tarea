@@ -1,12 +1,10 @@
-import React, { useContext} from 'react';
+import React from 'react';
 import { useHistory } from 'react-router';
-import { ProductosContext } from '../../context/productosContext';
 import AJUSTES from '../../JSON/json';
 import dayjs from 'dayjs'
 
 const Ajustes = () => {
     const history=useHistory()
-    const { getArrayProductos}=useContext(ProductosContext);
     return (
         <>
             <div id='contenedor-ajustes'>

@@ -1,10 +1,10 @@
 .productos{
-    position: fixed;
+    position: absolute;
     z-index: 1000;
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 100vh;
+    min-height: 130vh;
     background-color: rgba(0, 0, 0,.85);
     display: none;
     justify-content: center;
